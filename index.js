@@ -126,7 +126,8 @@
 // reverse of a number
 // ===================================
 function reverseNumber(n) {
-   
+  if(n<=0) return 0 ; 
+  if(typeof n != 'number') return 0 ;   
     let reverseValue = 0;
     while(n>0){
         reverseValue = reverseValue*10 + n%10
