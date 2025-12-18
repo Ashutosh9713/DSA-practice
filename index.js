@@ -79,3 +79,62 @@
 // console.log(isAutomorphicNum(7));    // No
    
  
+// isISBNvalid or not
+// ============================
+// ============================
+// An ISBN-10 (International Standard Book Number) is a 10-digit code that uniquely identifies a book. 
+// The validity of an ISBN-10 number can be determined using a specific formula. The first nine digits are multiplied by their position (i.e., 1st digit by 1, 2nd digit by 2, ..., 9th digit by 9), and the tenth digit is multiplied by 10. The sum of these products should be divisible by 11 for the ISBN-10 to be valid.
+
+
+// let n = 1234567892;
+// let n = 3452422385;
+// let n = 0306406152;
+// let n = 0131103628;
+// let n = 0596007124;
+
+// function isValidISBN(n){
+  
+
+// let copy = n , count = 0;
+// while(copy>0){
+//     count++;
+//     copy = Math.floor(copy/10);
+// }
+// console.log(count);
+// if(count!=10) console.log('Invalid ISBN number');
+// else{
+//   let sum = 0 ; 
+//     while(n>0){
+//       let dig = n%10;
+//       sum = sum + (dig*count);
+    
+//       count--;
+//       n = Math.floor(n/10);
+      
+//     }
+//     console.log(sum%11==0 ? 'Valid ISBN number ' : 'invalid ISBN number');
+// }
+// }
+// isValidISBN(1861972717); // valid
+// isValidISBN(1234567892); // invalid
+// isValidISBN(0306406152); // valid
+// isValidISBN(0131103628); // valid
+// isValidISBN(0596007124); // valid
+
+
+// ===================================
+// ===================================
+function reverseNumber(n) {
+   
+    let reverseValue = 0;
+    while(n>0){
+        reverseValue = reverseValue*10 + n%10
+        n = Math.floor(n/10)
+        
+    }
+    return reverseValue
+}
+
+console.log(reverseNumber(1234)); // 4321
+console.log(reverseNumber(1200)); // 21
+console.log(reverseNumber(987654321)); // 123456789
