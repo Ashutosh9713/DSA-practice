@@ -125,18 +125,52 @@
 // ===================================
 // reverse of a number
 // ===================================
-function reverseNumber(n) {
-  if(n<=0) return 0 ; 
-  if(typeof n != 'number') return 0 ;   
-    let reverseValue = 0;
-    while(n>0){
-        reverseValue = reverseValue*10 + n%10
-        n = Math.floor(n/10)
+// function reverseNumber(n) {
+//   if(n<=0) return 0 ; 
+//   if(typeof n != 'number') return 0 ;   
+//     let reverseValue = 0;
+//     while(n>0){
+//         reverseValue = reverseValue*10 + n%10
+//         n = Math.floor(n/10)
         
-    }
-    return reverseValue
-}
+//     }
+//     return reverseValue
+// }
 
-console.log(reverseNumber(1234)); // 4321
-console.log(reverseNumber(1200)); // 21
-console.log(reverseNumber(987654321)); // 123456789
+// console.log(reverseNumber(1234)); // 4321
+// console.log(reverseNumber(1200)); // 21
+// console.log(reverseNumber(987654321)); // 123456789
+
+
+// =================
+  // let n = 18;
+  //       let sumOfDigit = 0 ; 
+  //       while(n>0){
+  //         sumOfDigit = sumOfDigit + n%10;
+          
+  //         n = Math.floor(n/10)
+            
+  //       }
+  //       console.log(sumOfDigit);
+
+
+  // ===============================
+  // Abundant Number 
+  // ===============================
+  const Abundant = (nStr) =>{
+    let sumOfDiviser = 0 ;
+    for(let i =1 ; i<= nStr/2 ; i++){
+        if(nStr%i===0){
+            sumOfDiviser = sumOfDiviser + i;
+            // console.log(i)
+        }
+    }
+    // console.log('Sum of Divisers : ', sumOfDiviser);
+    return (sumOfDiviser > nStr ? 'Yes' : 'No');
+  }
+  
+  // Abundant(12);
+
+  // console.log(Abundant(12)); // Yes
+  console.log(Abundant(15)); // No
+ 
