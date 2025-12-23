@@ -157,20 +157,82 @@
   // ===============================
   // Abundant Number 
   // ===============================
-  const Abundant = (nStr) =>{
-    let sumOfDiviser = 0 ;
-    for(let i =1 ; i<= nStr/2 ; i++){
-        if(nStr%i===0){
-            sumOfDiviser = sumOfDiviser + i;
-            // console.log(i)
-        }
-    }
-    // console.log('Sum of Divisers : ', sumOfDiviser);
-    return (sumOfDiviser > nStr ? 'Yes' : 'No');
-  }
+  // const Abundant = (nStr) =>{
+  //   let sumOfDiviser = 0 ;
+  //   for(let i =1 ; i<= nStr/2 ; i++){
+  //       if(nStr%i===0){
+  //           sumOfDiviser = sumOfDiviser + i;
+  //           // console.log(i)
+  //       }
+  //   }
+  //   // console.log('Sum of Divisers : ', sumOfDiviser);
+  //   return (sumOfDiviser > nStr ? 'Yes' : 'No');
+  // }
   
   // Abundant(12);
 
   // console.log(Abundant(12)); // Yes
-  console.log(Abundant(15)); // No
+  // console.log(Abundant(15)); // No
+
+  // ===========================================================================
+
+
+  // =========================================
+  // Finding Prime factor of the number = write a program to finf and print all th eprime factor of a given number . Aprime factor is a factor that is a prime number.
+//  if the number is 0 or 1  , primt No prime number 
+  // =======================================
+
+
+//   function primeFactors(n){
+//     if(n<=1) return 'No prime factors';
+    
+//     function isPrime(num){
+//             for(let j = 2 ; j<= Math.sqrt(num) ; j++){
+//                 if(num%j===0) return false;
+//               }    return true; 
+//             }
+
+//     for(let i = 2 ; i<= n/2 ; i++){
+//        while(isPrime(i) && n%i===0){
+//            factors.push(i);
+//            n = n/i;
+//        }
+//        }
+//       return factors;
+// }
+// // console.log(primeFactors(12)) ; // [ 2, 2, 3 ]
+// console.log(primeFactors(45)) ; // [ 3, 3, 5 ]
+
+// // 
+//  if(nStr<=1){
+//             console.log("No prime factors");
+//             return ; 
+//         }
+//         for(let i = 2 ; i<=nStr ; i++){
+//             while(nStr%i ===0){
+//                 nStr = nStr/i;
+//                 console.log(i) ; 
+//             }
+//         }
  
+
+
+// =====================================
+// ------------------------------------
+// Neon Number = is the sum of digits of square of the number is equal to the number itsekf
+// ex = 1 , 9
+// 9  =  9*9  = 81 => 8+1 = 9;
+
+// copilot disabled
+//
+const isNeonNumner = (n)=>{
+   let sqr = n*n;
+   let sumOfDigits = 0 ;
+   while(sqr> 0){
+      sumOfDigits = sumOfDigits + sqr%10;
+       sqr = Math.floor(sqr/10);
+
+   }
+   return sumOfDigits === n ? 'Yes' : 'No' ;
+}
+console.log(isNeonNumner(9));
